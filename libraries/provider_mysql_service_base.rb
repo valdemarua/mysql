@@ -31,7 +31,7 @@ class Chef
         package "#{new_resource.name} :create #{server_package_name}" do
           package_name server_package_name
           version parsed_version if node['platform'] == 'smartos'
-          version new_resource.version
+          version new_resource.package_version
           action new_resource.package_action
         end
 
